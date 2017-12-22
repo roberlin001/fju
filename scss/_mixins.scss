@@ -1,0 +1,107 @@
+@charset "UTF-8";
+$white:#fff;
+$black:#000;
+$gray:#101010;
+$lightGray:#aaaaaa;
+$blue:#2ba6dc;
+$lightBlue:#bdeaf6;
+$bigTitle:45px;
+$kvTitleS:40px;
+$kvTitleB:65px;
+$enTitle:22px;
+$btnTxt:20px;
+$InnerTxt:18px;
+$menuTxt:15px;
+$full:100%;
+$width:1200px;
+
+
+@mixin breakpoint($point) {
+	@if $point == sPC {
+	    @media only screen and (max-width: 1400px) {
+	      @content;
+	    }
+	}
+	@else if $point == nb {
+	    @media only screen and (max-width: 1200px) {
+	      @content;
+	    }
+	}
+	@else if $point == nbsm {
+	    @media only screen and (max-width: 1023px) {
+	      @content;
+	    }
+	}
+	@else if $point == ipad {
+	    @media only screen and (max-width: 991px) {
+	      @content;
+	    }
+	}
+	@else if $point == m {
+	    @media only screen and (max-width: 767px) {
+	      @content;
+	    }
+	}
+	@else if $point == m1 {
+	    @media only screen and (max-width: 599px) {
+	      @content;
+	    }
+	}
+    @else if $point == m2 {
+        @media only screen and (max-width: 450px) {
+          @content;
+        }
+    }
+}
+
+@mixin btn($myColor) {
+	font-size: $InnerTxt;
+	background-color: $myColor;
+	border:1px solid $myColor;
+	border-radius: 25px;
+	padding: 10px 50px;
+	letter-spacing: 5px;
+	color: $white;
+	text-align: center;
+	text-indent: 5px;
+	display: block;
+	width: 150px;
+	transition:0.5s all;
+	&:hover{
+		color: $blue;
+		background-color: $white;
+	}
+	@include breakpoint(nb) {
+		font-size: $menuTxt;
+	}
+}
+@mixin formBtn($width,$myColor) {
+	
+}
+
+@mixin input($myWidth) {
+	width: $myWidth;
+	height: 65px;
+	border:1px solid #eee;
+	border-radius: 35px;
+	padding: 0 25px;
+	box-sizing:border-box;
+	font-size: 16px;
+	color: #909090;
+}
+
+.hidden{
+	overflow: hidden;
+}
+.Mnone{
+	display: none;
+	@include breakpoint(nb) {
+		display: block
+	}
+}
+.PCshow{
+	display: block;
+	@include breakpoint(nb) {
+		display: none
+	}
+}

@@ -1,0 +1,220 @@
+.login{
+	width: $full;
+	position: relative;
+	background-image: url('../img/loginBg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	padding-top: 200px;
+	padding-bottom: 150px;
+	box-sizing:border-box;
+	@include breakpoint(m1){
+		padding-top: 70px;
+		padding-bottom: 100px;
+	}
+	&_form{
+		width: 1000px;
+		position: relative;
+		padding-top: 150px;
+		padding-bottom: 45px;
+		margin: 0 auto;
+		background-image: url('../img/formBg.jpg');
+		border-radius: 15px;
+		box-shadow: 0 0 5px #ccc;
+		@include breakpoint(nbsm){
+			width: $full;
+			padding-left: 20px;
+			padding-right: 20px;
+			box-sizing:border-box;
+		}
+		@include breakpoint(m1){
+			padding-top: 110px;
+		}
+		&_logo{
+			position: absolute;
+			left:50%;
+			margin-left: -272px;
+			top:-120px;
+			filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+			@include breakpoint(nbsm){
+				filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1));
+			}
+			@include breakpoint(m1){
+				width: 300px;
+				margin-left: -150px;
+				top:-40px;
+			}
+		}
+		&_shadow{
+			position: absolute;
+			left:50%;
+			margin-left: -480px;
+			bottom:-104px;
+			@include breakpoint(nbsm){
+				margin-left: -300px;
+				width: 600px;
+				bottom:-66px;
+			}
+			@include breakpoint(m1){
+				margin-left: -150px;
+				width: 300px;
+				bottom:-33px;
+			}
+		}
+		&_table{
+			width: 537px;
+			margin:0 auto; 
+			@include breakpoint(nbsm){
+				width: $full;
+			}
+			td{
+				padding-bottom: 15px;
+				position: relative;
+				>input[type="file"]{
+					position: absolute;
+					left:0;
+					top:0;
+					height: 40px;
+					opacity: 0;
+				}
+				.fileDiv{
+					cursor: pointer;
+				}
+				.fileBtn{
+					@include formBtn(120px,$darkBlue);
+					position: relative;
+					height: 40px;
+					line-height: 40px;
+				}
+				.fileTT{
+					position: relative;
+				}
+				>.refresh>i{
+					font-size: 40px;
+				}
+				>.formBtn1{
+					@include formBtn(260px,#bdbdbd);
+					float: left;
+				}
+				>.formBtn2{
+					@include formBtn(260px,$green);
+					float: right;
+				}
+				>.formBtn3{
+					@include formBtn(32%,#bdbdbd);
+					float: left;
+				}
+				>.formBtn4{
+					@include formBtn(32%,$darkBlue);
+					margin-left: 1.5%;
+					float: left;
+					@include breakpoint(nbsm){
+						margin-left: 0;
+					}
+				}
+				>.formBtn5{
+					@include formBtn(32%,$green);
+					float: right;
+				}
+				>.formBtn6{
+					@include formBtn(32%,$green);
+					margin-top: 25px;
+				}
+				>.formBtn7{
+					@include formBtn(260px,$green);
+				}
+				>.formBtn8{
+					@include formBtn(20%,$blue);
+					margin-top: 25px;
+					@include breakpoint(nbsm){
+						width: $full;
+					}
+				}
+				>.formBtn9{
+					@include formBtn(20%,$green);
+					margin-top: 25px;
+					@include breakpoint(nbsm){
+						width: $full;
+					}
+				}
+				>.formBtn10{
+					@include formBtn(120px,$darkBlue);
+					@include breakpoint(nbsm){
+						margin-bottom: 10px;
+					}
+				}
+				>.formBtn{
+					@include breakpoint(nbsm){
+						width: $full;
+						margin-bottom: 15px;
+					}
+				}
+				.call{
+					color: #0069dd;
+					text-decoration: underline;
+					line-height: 26px;
+					&:hover{
+						text-decoration: none;
+					}
+				}
+
+			}
+			&_Td01{
+				@include breakpoint(nbsm){
+					width: 72%;
+					padding-right: 15px;
+					box-sizing:border-box;
+				}
+			}
+			&_Td02{
+				@include breakpoint(nbsm){
+					padding-right: 15px;
+					box-sizing:border-box;
+				}
+			}
+			&_tt{
+				font-size: $innerTitle;
+				text-align: center;
+			}
+		}
+		&_input01{
+			@include input($full);
+			&_textarea{
+				height: 130px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+		}
+		&_input02{
+			@include input(280px);
+			@include breakpoint(nbsm){
+				width: $full;
+			}
+		}
+		&_input03{
+			@include input(30%);
+		}
+		&_input04{
+			@include input(67%);
+		}
+		&_input05{
+			@include input(80%);
+		}
+		&_red{
+			color: #d21f1b;
+		}
+		&_btn{
+			font-size: 20px;
+			color: $green;
+		}
+		&_table2{
+			width: 90%;
+			margin-bottom: 30px;
+			&_border{
+				border:1px solid #aaaaaa;
+				padding: 15px 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,779 @@
+// @include breakpoint(sPC) {}
+// @include btn($gray);
+body{
+	background-image: url('../img/bg.jpg');
+}
+.kv{
+	width: $full;
+	height: $full;
+	position: fixed;
+	left:0;
+	top:0;
+	z-index: 1;
+	overflow: hidden;
+	@include breakpoint(nb) {
+		height:calc(100% - 86px);
+		top:86px;
+	}
+	&_btn{
+		position: absolute;
+		top:47%;
+		font-size: $kvTitleS;
+		color: $white;
+		text-shadow:0 0 10px #909090;
+		z-index: 1001;
+		@include breakpoint(nb) {
+			display: none;
+		}
+	}
+	.leftBtn{
+		left:30px;
+	}
+	.rightBtn{
+		right: 30px;
+	}
+	&_slide{
+		width: $full;
+		height: $full;
+		position: absolute;
+		left:0;
+		top:0;
+		&_banner{
+			width: 0;
+			height: $full;
+			background-repeat: no-repeat;
+			background-position: center center;
+			transition:1s all;
+			position: absolute;
+			left:0;
+			top:0;
+		}
+		&_bannerOpen{
+			width: $full;
+		}
+	}
+	&_txt{
+		width: $full;
+		height: $full;
+		z-index: 1000;
+		position: absolute;
+		&_container{
+			width: $full;
+			padding: 20px;
+			box-sizing:border-box;
+			color: $white;
+			font-size: $kvTitleS;
+			text-align: center;
+			font-weight: 600;
+			letter-spacing: 3px;
+			text-shadow:0 0 3px #505050;
+			position: absolute;
+			left:0;
+			top:0;
+			@include breakpoint(nb) {
+				font-size: $enTitle;
+			}
+			div{
+				color: $white;
+				transition:0.5s all;
+			}
+			.lowTansition{
+				transition:0.5s 0.5s all;
+			}
+			span{
+				font-weight: 800;
+				font-size: $kvTitleB;
+				@include breakpoint(nb) {
+					font-size: 30px;
+				}
+			}
+		}
+	}
+}
+.kv_txt_scale{
+	div{
+		opacity: 0;
+		transform:scale(1.1);
+	}
+}
+.kv_txt_top{
+	div{
+		opacity: 0;
+	}
+	div:first-child{
+		transform:translateY(-100px) ;
+	}
+	div:last-child{
+		transform:translateY(100px) ;
+	}
+}
+.kv_txt_left{
+	div{
+		opacity: 0;
+	}
+	div:first-child{
+		transform:translateX(100px) ;
+	}
+	div:last-child{
+		transform:translateX(-100px) ;
+	}
+}
+.wrapper{
+	z-index: 2;
+	position: relative;
+	background-image: url('../img/bg2.jpg');
+	overflow: hidden;
+	margin-top:100vh;
+	.block{
+		width: $full;
+		position: relative;
+		overflow: hidden;
+		box-sizing:border-box;
+	}
+	.block01{
+		width: 96%;
+		margin:2% auto 95px auto;
+		padding: 20px;
+		background-color: $white;
+		.center{
+			width: $full / 2;
+			float: left;
+			@include breakpoint(nb) {
+				width: $full;
+				float: right;
+			}
+		}
+		.intrduce{
+			width: $full / 2;
+			float: right;
+			padding: 20px;
+			box-sizing:border-box;
+			@include breakpoint(nb) {
+				width: $full;
+				float: left;
+			}
+			&_container{
+				width: 520px;
+				margin: 0 auto;
+				text-align: center;
+				padding-top: 7%;
+				@include breakpoint(nb) {
+					width: $full;
+					padding-top: 0;
+				}
+				&_txt{
+					font-size: $InnerTxt;
+					color: $gray;
+					letter-spacing: 1px;
+					margin-top: 15px;
+					text-align: center;
+					@include breakpoint(nb) {
+						font-size: $menuTxt;
+					}
+				}
+			}
+		}
+	}
+	.block02{
+		.event{
+			width:$width;
+			position: relative;
+			margin: 30px auto 0 auto;
+			@include breakpoint(nb) {
+				width: $full;
+			}
+			&_btn{
+				position: absolute;
+				top:210px;
+				color: $gray;
+				font-size: $kvTitleS;
+				@include breakpoint(nb) {
+					display: none;
+				}
+			}
+			.leftBtn2{
+				left:-45px;
+			}
+			.rightBtn2{
+				right: -45px;
+			}
+			&_container{
+				width: $full;
+				height: 550px;
+				position: relative;
+				@include breakpoint(nb) {
+					height: auto;
+				}
+				&_out{
+					width: $full;
+					position: absolute;
+					left:0;
+					top:0;
+					display: none;
+					&:first-child{
+						display: block;
+					}
+					@include breakpoint(nb) {
+						position: relative;
+						display: block;
+					}
+				}
+				&_box{
+					width: 581px;
+					height: 229px;
+					background-color: $white;
+					display: block;
+					margin-bottom: 35px;
+					position: relative;
+					padding: 25px;
+					box-sizing:border-box;
+					@include breakpoint(nb) {
+						width: 90%;
+						height: auto;
+						margin: 0 auto 25px auto;
+					}
+					&:nth-child(odd){
+						float: left;
+						@include breakpoint(nb) {
+							float: none;
+						}
+					}
+					&:nth-child(even){
+						float: right;
+						@include breakpoint(nb) {
+							float: none;
+						}
+					}
+					&:nth-child(1){
+						.divNum{
+							background-color: #4fa700;
+						}
+					}
+					&:nth-child(2){
+						.divNum{
+							background-color: #ff8400;
+						}
+					}
+					&:nth-child(3){
+						.divNum{
+							background-color: #ae00d3;
+						}
+					}
+					&:nth-child(4){
+						.divNum{
+							background-color: #0019d3;
+						}
+					}
+					.boxTitle{
+						font-weight: 600;
+						color: $gray;
+						font-size: $enTitle;
+						letter-spacing: 1px;
+						margin-bottom: 20px;
+						@include breakpoint(nbsm) {
+							font-size: $btnTxt;
+						}
+					}
+					.boxTxt{
+						font-size: $InnerTxt;
+						color: $gray;
+						letter-spacing: 1px;
+						margin-bottom: 20px;
+						@include breakpoint(nbsm) {
+							font-size: $menuTxt;
+						}
+					}
+					.boxTime{
+						color: $lightGray;
+						font-size: $menuTxt;
+					}
+					.divNum{
+						font-size: $menuTxt;
+						color: $white;
+						position: absolute;
+						right: 0;
+						bottom: 20px;
+						width: 71px;
+						height: 33px;
+						line-height: 33px;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+	.block03{
+		background-image: url('../img/bg.jpg');
+		padding: 50px 0;
+		.health{
+			width: $full;
+			position: relative;
+			overflow: hidden;
+			text-align: center;
+			margin-top: 35px;
+			&_box{
+				width: 31%;
+				display: inline-block;
+				margin: 1%;
+				@include breakpoint(nbsm) {
+					width: 96%;
+					margin:0 0 20px 0;
+				}
+				&:nth-child(1){
+					.health_box_pic{
+						background-image: url('../img/p1.jpg');
+					}
+					.health_box_txt{
+						background-color: $white;
+					}
+					&:hover{
+						.health_box_txt{
+							background-color: #0080b8;
+							&_inner{
+								color: $white;
+								i{
+									color: $white;
+								}
+							}
+						}
+					}
+				}
+				&:nth-child(2){
+					.health_box_pic{
+						background-image: url('../img/p2.jpg');
+						@include breakpoint(nbsm) {
+							float: right;
+						}
+					}
+					.health_box_txt{
+						background-color: #0080b8;
+						&_inner{
+							color: $white;
+							i{
+								color: $white;
+							}
+						}
+						@include breakpoint(nbsm) {
+							float: left;
+						}
+					}
+					&:hover{
+						.health_box_txt{
+							background-color: $white;
+							&_inner{
+								color: $gray;
+								i{
+									color: #0080b8;
+								}
+							}
+						}
+					}
+				}
+				&:nth-child(3){
+					.health_box_pic{
+						background-image: url('../img/p3.jpg');
+					}
+					.health_box_txt{
+						background-color: $white;
+					}
+					&:hover{
+						.health_box_txt{
+							background-color: #0080b8;
+							&_inner{
+								color: $white;
+								i{
+									color: $white;
+								}
+							}
+						}
+					}
+				}
+				&:nth-child(4){
+					.health_box_pic{
+						background-image: url('../img/p4.jpg');
+						@include breakpoint(nbsm) {
+							float: right;
+						}
+					}
+					.health_box_txt{
+						background-color: #0080b8;
+						&_inner{
+							color: $white;
+							i{
+								color: $white;
+							}
+						}
+						@include breakpoint(nbsm) {
+							float: left;
+						}
+					}
+					&:hover{
+						.health_box_txt{
+							background-color: $white;
+							&_inner{
+								color: $gray;
+								i{
+									color: #0080b8;
+								}
+							}
+						}
+					}
+				}
+				&:nth-child(5){
+					.health_box_pic{
+						background-image: url('../img/p5.jpg');
+					}
+					.health_box_txt{
+						background-color: $white;
+					}
+					&:hover{
+						.health_box_txt{
+							background-color: #0080b8;
+							&_inner{
+								color: $white;
+								i{
+									color: $white;
+								}
+							}
+						}
+					}
+				}
+				&:nth-child(6){
+					.health_box_pic{
+						background-image: url('../img/p6.jpg');
+						@include breakpoint(nbsm) {
+							float: right;
+						}
+					}
+					.health_box_txt{
+						background-color: #0080b8;
+						&_inner{
+							color: $white;
+							i{
+								color: $white;
+							}
+						}
+						@include breakpoint(nbsm) {
+							float: left;
+						}
+					}
+					&:hover{
+						.health_box_txt{
+							background-color: $white;
+							&_inner{
+								color: $gray;
+								i{
+									color: #0080b8;
+								}
+							}
+						}
+					}
+				}
+				>div{
+					width: $full / 2;
+					height: 270px;
+				}
+				&_pic{
+					background-size: cover;
+					background-position: center center;
+					background-repeat: no-repeat;
+					float: left;
+				}
+				&_txt{
+					float: right;
+					box-sizing:border-box;
+					padding: 0 15px;
+					display: flex;
+					align-items: center;
+					text-align: center;
+					transition:0.3s all;
+					&_inner{
+						text-align: center;
+						font-size:$InnerTxt;
+						width: $full;
+						letter-spacing: 1px;
+						transition:0.3s all;
+						i{
+							font-size: 35px;
+							color: $blue;
+							transition:0.3s all;
+						}
+					}
+				}
+			}
+		}
+	}
+	.block04{
+		background-image: url('../img/bg3.jpg');
+		padding: 50px 0;
+		background-size: cover;
+		background-position: top center;
+		background-repeat: no-repeat;
+		.form{
+			width: $width;
+			margin: 0 auto;
+			position: relative;
+			overflow: hidden;
+			@include breakpoint(nbsm) {
+				width: $full;
+			}
+			>div{
+				width: 48%;
+				@include breakpoint(nbsm) {
+					width: $full;
+					padding: 0 20px;
+					box-sizing:border-box;
+				}
+			}
+			&_out{
+				float: left;
+				margin-top: 25px;
+				table{
+					width: $full;
+					td{
+						padding-bottom: 15px;
+						.input{
+							@include input($full);
+						}
+						.input2{
+							@include input($full / 2.05);
+							float: left;
+						}
+						.password{
+							width: $full / 2.05;
+							float: right;
+							text-align: center;
+							line-height: 65px;
+							height: 65px;
+							background-color: #505050;
+							color: $white;
+							border-radius: 35px;
+						}
+					}
+				}
+			}
+			&_txt{
+				float: right;
+				margin-top: 25px;
+			}
+		}
+	}
+	.block05{
+		background-image: url('../img/bg4.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		padding: 45px 0;
+		.link{
+			width: $width;
+			margin: 30px auto;
+			overflow: hidden;
+			@include breakpoint(nbsm) {
+				width: $full;
+			}
+			ul{
+				text-align: center;
+				li{
+					display: inline-block;
+					font-size: $menuTxt;
+					background-color: $white;
+					margin:5px;
+					padding: 5px 10px;
+					border-radius: 10px;
+					transition:0.5s all;
+					border:1px solid $white;
+					&:hover{
+						background-color: #909090;
+						a{
+							color: $white;
+						}
+					}
+					a{
+						color: $gray;
+					}
+				}
+			}
+		}
+	}
+}
+.blockTitle{
+	div:first-child{
+		width: $full;
+		color: $gray;
+		font-size: $bigTitle;
+		text-align: center;
+		font-weight: 800;
+		letter-spacing: 3px;
+		@include breakpoint(nb) {
+			font-size: 25px;			
+		}
+	}
+	div:last-child{
+		font-family: Century Gothic;
+		margin: 0 auto;
+		overflow: hidden;
+		display: table;
+		font-size: $enTitle;
+		@include breakpoint(nb) {
+			font-size: $InnerTxt;
+		}
+		*{
+			float: left;
+		}
+		hr{
+			width: 150px;
+			position: relative;
+			top:10px;
+			@include breakpoint(nb) {
+				display: none;
+			}
+		}
+		div{
+			color: $blue;
+			margin: 5px;
+		}
+	}
+}
+.moreBtn{
+	@include btn($blue);
+	margin: 20px auto;
+
+}
+.innerKV{
+	width: $full;
+	height: 500px;
+	position: fixed;
+	background-image: url('../img/001.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	left:0;
+	top:0;
+	display: flex;
+	align-items:center;
+	align-content:center;
+	.innerKVtxt{
+		width: $full;
+		text-align: center;
+		color: $white;
+		font-size: $kvTitleS;
+		font-weight: 600;
+		text-shadow:0 0 5px #505050;
+		letter-spacing: 2px;
+		padding:0 15px;
+		box-sizing:border-box;
+	}
+}
+.blockInner{
+	margin-top: 500px;
+	position: relative;
+	z-index: 3;
+	padding: 50px 0;
+	background-image: url('../img/bg.jpg');
+	.healthIntrduce{
+		width: $width;
+		margin: 0 auto;
+		overflow: hidden;
+		@include breakpoint(nb) {
+			width: $full;
+		}
+		&_left{
+			width: 368px;
+			float: left;
+			@include breakpoint(nb) {
+				width: $full;
+			}
+			ul{
+				width: 96%;
+				margin: 0 auto;
+				overflow: hidden;
+				li{
+					background-color: $blue;
+					box-sizing:border-box;
+					padding:12px 15px;
+					margin-bottom: 10px;
+					transition:0.3s all;
+					@include breakpoint(nb) {
+						float: left;
+						margin-right: 10px;
+					}
+					a{
+						color: $white;
+						display: block;
+					}
+					&:hover{
+						background-color: $white;
+						a{
+							color: $blue;
+						}
+					}
+				}
+				.currentHealth{
+					background-color: $white;
+					a{
+						color: $blue;
+					}
+				}
+			}
+		}
+		&_right{
+			width: 800px;
+			float: right;
+			@include breakpoint(nb) {
+				width: $full;
+			}
+			.table{
+				width: $full;
+				border: 1px solid $blue;;
+				@include breakpoint(nb) {
+					width: 96%;
+					margin: 0 auto;
+				}
+				tr:first-child{
+					td{
+						color: $white;
+						background-color: $blue;
+					}
+					@include breakpoint(nb) {
+						display: none;
+					}
+				}
+				tr{
+					background-color: $white;
+					@include breakpoint(nb) {
+						&:nth-child(odd){
+							background-color: #f5f5f5;
+						}
+					}
+					td{
+						padding: 15px;
+						box-sizing:border-box;
+						border: 1px solid #eee;
+						@include breakpoint(nb) {
+							border:none;
+							width: $full;
+							display: block;
+							border-bottom: 1px solid #eee;
+							&:nth-child(1){
+								&:before{
+									content: "套裝：";
+								}
+							}
+							&:nth-child(2){
+								&:before{
+									content: "名稱：";
+								}
+							}
+							&:nth-child(4){
+								&:before{
+									content: "收費金額：";
+								}
+							}
+						}
+						
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,148 @@
+header{
+	width: $full;
+	position: fixed;
+	left:0;
+	top:0;
+	z-index: 9;
+	transition:0.5s all;
+	.header_wrapper{
+		width: $width;
+		position: relative;
+		margin: 0 auto;
+		overflow: hidden;
+		padding: 20px 0;
+		@include breakpoint(nb) {
+			width: $full;
+			background-color: $white;
+			padding:0;
+		}
+		.logo{
+			float: left;
+			width: 232px;
+			height: 64px;
+			background-image: url('../img/logo2.svg');
+			background-size: cover;
+			@include breakpoint(nb) {
+				background-image: url('../img/logo.svg');
+				margin-left: 15px;
+				width: 190px;
+				height: 52px;
+				margin-top: 15px;
+				margin-bottom: 15px;
+			}
+		}
+		.menuBtn{
+			display: none;
+			@include breakpoint(nb) {
+				display: block;
+				width: 86px;
+				height: 86px;
+				background-color: #303030;
+				float: right;
+			}
+			div{
+				background-color: $white;
+				width: 40px;
+				height: 4px;
+				margin-top: 8px;
+				margin-left: 23px;
+				position: relative;
+				transition:0.3s all;
+			}
+			div:first-child{
+				margin-top: 27px;
+			}
+		}
+		.menuBtnClose{
+			div:first-child{
+				transform:rotateZ(-45deg);
+				top:11px;
+			}
+			div:nth-child(2){
+				display: none;
+			}
+			div:last-child{
+				transform:rotateZ(45deg);
+			}
+		}
+		nav{
+			float: right;
+			margin-top: 40px;
+			@include breakpoint(nb) {
+				width: $full;
+			}
+			ul{
+				float: left;
+				@include breakpoint(nb) {
+					width: $full;
+				}
+				li{
+					float: left;
+					font-size: $menuTxt;
+					letter-spacing: 1px;
+					margin-left: 20px;
+					text-shadow:0 0 10px #909090;
+					box-sizing:border-box;
+					transition:0.3s all;
+					@include breakpoint(nb) {
+						clear: left;
+						display: block;
+						width: $full;
+						text-align: center;
+						font-size: $btnTxt;
+						padding: 10px 0;
+						border-top:1px solid #eee;
+						margin: 0;
+						&.showSearch{
+							display: none;
+						}
+					}
+					a{
+						color: $white;
+						@include breakpoint(nb) {
+							color: $gray;
+							text-shadow:none;
+						}
+					}
+					&:hover{
+						a{
+							text-decoration: underline;
+						}
+					}
+					input{
+						padding: 10px;
+						border-radius: 3px;
+						font-size: 12px;
+						box-sizing:border-box;
+						position: relative;
+						top:-10px;
+						@include breakpoint(nb) {
+							width: 95%;
+							border:1px solid #aaa;
+							font-size: $menuTxt;
+							margin: 0 auto;
+							height: 40px;
+							top:0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.headerWhite{
+	background-color:$white;
+	border-bottom: 1px solid #eee;
+	.header_wrapper .logo{
+		background-image: url('../img/logo.svg');
+	}
+	.header_wrapper nav ul li{
+		text-shadow:none;
+		a{
+			color: $gray;
+		}
+		input{
+			border:1px solid #eee;
+		}
+	}
+}
